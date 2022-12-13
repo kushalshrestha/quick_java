@@ -1,0 +1,9 @@
+Problem 1
+Part C
+==========
+The code fails because we should consider override of hashcode when equals is overriden. Hence, in order to make the code execute properly, we need to add a hashCode() method:
+
+@Override
+	public int hashCode() {
+		return Objects.hash(name, salary);
+	}

@@ -1,5 +1,7 @@
 package quick_java.lesson7.prob1.partC;
 
+import java.util.Objects;
+
 public class Employee {
 	private String name;
 	private int salary;
@@ -23,6 +25,11 @@ public class Employee {
 
 	public void setSalary(int salary) {
 		this.salary = salary;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, salary);
 	}
 
 	@Override
