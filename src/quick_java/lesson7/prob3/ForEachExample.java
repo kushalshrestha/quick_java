@@ -11,19 +11,5 @@ public class ForEachExample {
 
 		// print each element of the list in upper case format
 		list.forEach(new MyConsumer());
-
-//		list.forEach(new Consumer<String>() {
-//
-//			@Override
-//			public void accept(String t) {
-//				// TODO Auto-generated method stub
-//				System.out.println(t);
-//			}
-//
-//		});
-
 	}
-
-	// implement a Consumer
-
 }
