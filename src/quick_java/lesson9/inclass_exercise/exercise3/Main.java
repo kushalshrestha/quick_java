@@ -3,6 +3,7 @@ package quick_java.lesson9.inclass_exercise.exercise3;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -25,7 +26,11 @@ public class Main {
 		// sorting code here
 		accounts.stream().sorted(Comparator.comparing(Account::getBalance).thenComparing(Account::getOwnerName))
 				.forEach(System.out::println);
-
+		System.out.println("======Alternative way======");
+		List<Account> output = accounts.stream()
+				.sorted(Comparator.comparing(Account::getBalance).thenComparing(Account::getOwnerName))
+				.collect(Collectors.toList());
+		System.out.println(output);
 	}
 
 }

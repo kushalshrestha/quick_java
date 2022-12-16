@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -105,15 +105,65 @@ public class SlidesDemo1 {
 		List<String> words = Arrays.asList("Tom", "Joseph", "Richard");
 		Stream<String> longestFirst1 = words.stream().sorted();
 		System.out.println(longestFirst1.collect(Collectors.toList()));
-		
-		Stream<String> longestFirst2 = words.stream().sorted((x,y)->y.length() - x.length());
+
+		Stream<String> longestFirst2 = words.stream().sorted((x, y) -> y.length() - x.length());
 		System.out.println(longestFirst2.collect(Collectors.toList()));
-		
-		
+
 		Stream<String> longestFirst3 = words.stream().sorted(Comparator.comparing(String::length).reversed());
 		System.out.println(longestFirst3.collect(Collectors.toList()));
-		
 
+		// slide 47
+		List<String> words1 = Arrays.asList("Tom", "Joseph", "Richard");
+		Optional<String> res = words1.stream().filter(x -> x.length() > 10).max(String::compareToIgnoreCase);
+		// several options available to check optional result without null exception
+		// 1. isPresent
+		if (res.isPresent())
+			System.out.println(res.get());
+		else
+			System.out.println("No max");
+
+		// 2. ifPresent
+		res.ifPresent(x -> System.out.println(x)); // if data available, only then will print
+
+		// Alternative way : orElse
+		System.out.println(res.orElse("No Max"));
+		System.out.println(res.orElse("====="));
+
+		// findFirst
+		// Uncomment and fix the 'list' i.e create list
+//		Optional<String> name = words1.stream().map(x->x.getName()).filter(x->x.startsWith("A")).findFirst();
+		Optional<String> name = words1.stream().filter(x -> x.startsWith("A")).findFirst();
+		System.out.println(name);
+		System.out.println(name.orElse("No item starting from R"));
+
+		// orElseGet and Creating your own optional
+		Optional<Double> inv = inverse(5.0);
+		System.out.println("Inverse of x = " + inv.orElse(0.0));
+
+		Optional<String> fullName = Optional.of("Kushal Shrestha");
+		System.out.println("full name = " + fullName.orElseGet(() -> "Dipesh KC"));
+		Optional<String> anotherFullName = Optional.ofNullable(null);
+		System.out.println("full name = " + anotherFullName.orElseGet(() -> "Dipesh KC"));
+
+		// slide 66
+		List<Integer> numbers1 = Arrays.asList(9, 10, 3, 4, 7, 8);
+		Integer sum1 = numbers1.stream().reduce(0, (x1, y1) -> x1 + y1);
+		System.out.println(sum1);
+
+		Optional<Integer> sum = numbers1.stream().reduce((x, y) -> x + y);
+		System.out.println(sum);
+
+		// find the sum of Item's price using reduce method
+		// fix - > list refers to List<Item>
+//		Double tPrice = list.stream().map(x->x.getPrice()).reduce(0.0, Double::sum);
+
+		Stream<String> strings = Stream.of("A", "good", "day", "to", "write", "some", "Java");
+		System.out.println(strings.reduce("", (x, y) -> x + " " + y).trim());
+
+	}
+
+	public static Optional<Double> inverse(Double x) {
+		return x == null || x == 0.0 ? Optional.empty() : Optional.of(1 / x);
 	}
 
 	public static Stream<Character> characterStream(String s) {
