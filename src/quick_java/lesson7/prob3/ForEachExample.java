@@ -27,5 +27,6 @@ public class ForEachExample {
 		
 		list.forEach(consumer1);
 		
+		
 	}
 }

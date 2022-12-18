@@ -159,6 +159,14 @@ public class SlidesDemo1 {
 
 		Stream<String> strings = Stream.of("A", "good", "day", "to", "write", "some", "Java");
 		System.out.println(strings.reduce("", (x, y) -> x + " " + y).trim());
+		
+		
+		// Stream reuse - solution 1
+		getStream(names).filter(x->x.startsWith("J")).sorted().map(x->x.toUpperCase()).forEach(System.out::println);
+		getStream(names).filter(x->x.startsWith("J")).sorted().map(String::toUpperCase).forEach(System.out::println);
+		
+		//Stream reuse - solution 2
+		// Create function
 
 	}
 
@@ -171,6 +179,12 @@ public class SlidesDemo1 {
 		for (char c : s.toCharArray())
 			result.add(c);
 		return result.stream();
+	}
+	
+	
+	//Solution 1: creating method for calling multiple times stream
+	public static Stream<String> getStream(List<String> list) {
+		return list.stream();
 	}
 
 }
