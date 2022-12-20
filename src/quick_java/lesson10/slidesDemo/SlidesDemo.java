@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SlidesDemo {
 
-	public static void main(String[] args) {
+	public static <T> void main(String[] args) {
 		// Slide 4
 		List words = new ArrayList();
 		words.add("Hello");
@@ -41,6 +41,19 @@ public class SlidesDemo {
 		int employeeId = pair.getKey();
 		System.out.println(employeeId);
 
+		// Slide 18
+		List<Integer> ints = new ArrayList<Integer>();
+		ints.add(2);
+		ints.add(3);
+		System.out.println(ints);
+//		List<Number> nums = ints; //gives error
+
+		// Slide22
+		T[] arr = null;// ok so far
+//		arr = new T[5]; //compilation error : compiler has no information about what type of object to create
+		T[] arr1 = (T[]) new Object[5]; // this works
+		// Slide 23
+//		List<String>[] listA = new ArrayList<String>[5]; //cannot create a generic array of ArrayList<String>
 	}
 
 	public static Integer max0(List<Integer> list) {
