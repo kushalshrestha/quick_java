@@ -1,10 +1,15 @@
 package quick_java.mpp_final;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -111,6 +116,52 @@ public class Lesson9Main {
 
 		System.out.println(highestValue);
 
+		// Assignment 9
+		// Is there any Vegeterian meal available
+		System.out
+				.println("Is there any Vegeterian meal available ? Answer: " + Lesson9Main.isVegetarianFriendlyMenu());
+		// Is there any healthy menu have calories less than 1000 ( return type boolean)
+		System.out.println("Is there any healthy menu have calories less than 1000 ? Answer: "
+				+ Lesson9Main.isMenuConsistofLessThan1000Calories());
+
+//		c. Is there any unhealthy menu have calories greater than 1000 ( return type boolean)
+		System.out.println("Is there any unhealthy menu have calories more than 1000 ? Answer: "
+				+ Lesson9Main.isMenuConsistofMoreThan1000Calories());
+
+//		d. find and return the first item for the type of MEAT( return type Optional<Dish>)
+		System.out.println("First Item for type of Meat ? Answer: " + Lesson9Main.firstItemforTypeMeat());
+//		e. calculateTotalCalories() in the menu using reduce. (return int)
+		System.out.println("Total calories in menu ? Answer: " + Lesson9Main.calculateTotalCalories());
+//		f. calculateTotalCaloriesMethodReference()in the menu using MethodReferences. (return int)
+		System.out
+				.println("Total calories in menu ? Answer: " + Lesson9Main.calculateTotalCaloriesWithMethodReference());
+
+		// Assignment 10
+		Human[] humanList = { new Human("Joe", 35, "Male"), new Human("Jane", 45, "Female"),
+				new Human("John", 30, "Male") };
+
+		// Query 1 : Print only Female canditates names
+		Stream<Human> humanStream = Arrays.stream(humanList);
+		Stream<Human> humanStream1 = Stream.of(humanList);
+		System.out
+				.println(humanStream.filter(human -> human.getGender().equals("Female")).collect(Collectors.toList()));
+		// or
+		humanStream1.filter(human -> human.getGender().equals("Female")).forEach(System.out::println);
+
+		// Query 2 : Cretae an object by choosing suitable Interface to the specified
+		Function<String, Human> function = Human::new;
+		// OR
+		Function<String, Human> function1 = (s) -> new Human(s);
+		Human ob = function.apply("Kushal");
+		System.out.println(ob);
+
+		// constructors(Totally 3 constuctors)using fouth type of Method Reference
+		// ClassName::new. Then print the object status
+		Collection<Human> col1 = arrayToCollection(ArrayList<Human>::new, humanList);
+		System.out.println(col1);
+
+		// Query 3 : Count the male candidates whose age is more than 30
+
 	}
 
 	public int countWords(List<String> words, char c, char d, int len) {
@@ -128,6 +179,57 @@ public class Lesson9Main {
 	public static Stream<String> streamSection(Stream<String> stream, int m, int n) {
 		return stream.limit(n + 1).skip(m);
 //		return stream.skip(m).limit(n);  // both works but n & n+1 (notice the difference)
+	}
+
+	private static boolean isVegetarianFriendlyMenu() {
+		return Dish.menu.stream().anyMatch(Dish::isVegetarian);
+	}
+
+	// Is there any healthy menu have calories less than 1000 ( return type boolean)
+	private static boolean isMenuConsistofLessThan1000Calories() {
+		return Dish.menu.stream().anyMatch(d -> d.getCalories() < 1000);
+	}
+
+//	c. Is there any unhealthy menu have calories greater than 1000 ( return type boolean)
+	private static boolean isMenuConsistofMoreThan1000Calories() {
+		return Dish.menu.stream().noneMatch(d -> d.getCalories() >= 1000);
+	}
+
+//	d. find and return the first item for the type of MEAT( return type Optional<Dish>)
+	private static Optional<Dish> firstItemforTypeMeat() {
+		return Dish.menu.stream().filter(item -> item.getType().equals(Dish.Type.MEAT)).findFirst();
+	}
+
+//	e. calculateTotalCalories() in the menu using reduce. (return int)
+	private static int calculateTotalCalories() {
+		return Dish.menu.stream().map(item -> item.getCalories()).reduce(0, (x, y) -> x + y);
+//		return Dish.menu.stream().map(Dish::getCalories).reduce(Integer::sum).get();
+//		return Dish.menu.stream().map(Dish::getCalories).reduce(Integer::sum).get();
+	}
+
+	private static int calculateTotalCalories1() {
+		return Dish.menu.stream().collect(Collectors.reducing(0, Dish::getCalories, (Integer i, Integer j) -> i + j));
+	}
+
+//	f. calculateTotalCaloriesMethodReference()in the menu using MethodReferences. (return int)
+	private static int calculateTotalCaloriesWithMethodReference() {
+		return Dish.menu.stream().collect(Collectors.reducing(0, Dish::getCalories, Integer::sum));
+	}
+
+	private static int calculateTotalCaloriesWithoutCollectors() {
+		return Dish.menu.stream().map(Dish::getCalories).reduce(Integer::sum).get();
+	}
+
+	private static int calculateTotalCaloriesUsingSum() {
+		return Dish.menu.stream().mapToInt(Dish::getCalories).sum();
+	}
+
+	public static Collection<Human> arrayToCollection(Supplier<Collection<Human>> supplier, Human[] humans) {
+		Collection<Human> collection = supplier.get();
+		for (Human i : humans) {
+			collection.add(i);
+		}
+		return collection;
 	}
 
 }
