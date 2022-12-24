@@ -8,11 +8,11 @@ import java.util.List;
 import quick_java.lesson8.prob2.Product;
 
 public class TaskC {
-	private static enum PRODUCTCOMPARATOR {
+	private enum PRODUCTCOMPARATOR {
 		BYTITLE, BYPRICE
-	};
+	}
 
-	public void sort(List<Product> productList, final PRODUCTCOMPARATOR pComparator) {
+    public void sort(List<Product> productList, final PRODUCTCOMPARATOR pComparator) {
 		class ProductComparator implements Comparator<Product> {
 
 			@Override

@@ -1,8 +1,10 @@
 package quick_java.lesson7.slidesDemo;
 
 public class PersonInDetail implements NameAddress {
-	private String firstName, lastName, middleName;
-	private Address address;
+	private final String firstName;
+    private final String lastName;
+    private final String middleName;
+	private final Address address;
 
 	PersonInDetail(String firstName, String lastName, String middleName, Address address) {
 		this.firstName = firstName;

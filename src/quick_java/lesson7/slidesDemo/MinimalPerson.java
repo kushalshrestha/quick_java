@@ -1,7 +1,11 @@
 package quick_java.lesson7.slidesDemo;
 
 public class MinimalPerson implements NameAddress {
-	private String firstName, lastName, street, city, state;
+	private final String firstName;
+    private final String lastName;
+    private final String street;
+    private final String city;
+    private final String state;
 
 	MinimalPerson(String firstName, String lastName, String street, String city, String state) {
 		this.firstName = firstName;

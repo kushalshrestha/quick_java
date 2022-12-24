@@ -39,9 +39,8 @@ public class Employee {
 	public boolean equals(Object ob) {
 		if (ob == null)
 			return false;
-		if (!(ob instanceof Employee))
+		if (!(ob instanceof Employee emp))
 			return false;
-		Employee emp = (Employee) ob;
 		return emp.name.equals(name) && emp.salary == salary && emp.visited == visited;
 	}
 

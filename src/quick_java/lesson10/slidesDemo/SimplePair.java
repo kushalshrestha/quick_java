@@ -1,8 +1,8 @@
 package quick_java.lesson10.slidesDemo;
 
 public class SimplePair<K, V> {
-	private K keyA;
-	private V value;
+	private final K keyA;
+	private final V value;
 
 	public SimplePair(K key, V value) {
 		this.keyA = key;
@@ -11,10 +11,10 @@ public class SimplePair<K, V> {
 
 	public K getKey() {
 		return keyA;
-	};
+	}
 
-	public V getValue() {
+    public V getValue() {
 		return value;
-	};
+	}
 
 }

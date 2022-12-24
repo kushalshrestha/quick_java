@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group<T> {
-	private T specialElement;
+	private final T specialElement;
 	private List<T> elements = new ArrayList<>();
 
 	public Group(T special, List<T> elements) {

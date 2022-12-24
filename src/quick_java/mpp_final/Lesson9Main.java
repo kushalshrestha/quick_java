@@ -1,12 +1,6 @@
 package quick_java.mpp_final;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -54,7 +48,7 @@ public class Lesson9Main {
 
 		// Assignment 5
 		List<String> wordTest5 = Arrays.asList("aaa", "bbb", "ccc", "ddd", "eee");
-		Stream<String> output5 = l9m.streamSection(wordTest5.stream(), 1, 3);
+		Stream<String> output5 = streamSection(wordTest5.stream(), 1, 3);
 		System.out.println(output5.collect(Collectors.toList()));
 
 		// Assignment 8
@@ -157,7 +151,7 @@ public class Lesson9Main {
 
 		// constructors(Totally 3 constuctors)using fouth type of Method Reference
 		// ClassName::new. Then print the object status
-		Collection<Human> col1 = arrayToCollection(ArrayList<Human>::new, humanList);
+		Collection<Human> col1 = arrayToCollection(ArrayList::new, humanList);
 		System.out.println(col1);
 
 		// Query 3 : Count the male candidates whose age is more than 30
@@ -226,9 +220,7 @@ public class Lesson9Main {
 
 	public static Collection<Human> arrayToCollection(Supplier<Collection<Human>> supplier, Human[] humans) {
 		Collection<Human> collection = supplier.get();
-		for (Human i : humans) {
-			collection.add(i);
-		}
+		Collections.addAll(collection, humans);
 		return collection;
 	}
 

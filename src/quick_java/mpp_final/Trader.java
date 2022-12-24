@@ -2,7 +2,7 @@ package quick_java.mpp_final;
 
 public class Trader {
 
-	private String name;
+	private final String name;
 	private String city;
 
 	public Trader(String n, String c) {

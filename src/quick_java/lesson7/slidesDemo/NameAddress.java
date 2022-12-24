@@ -26,6 +26,6 @@ public interface NameAddress {
 
 	// One static method
 	static String printInLower(String t) {
-		return t.toString().toLowerCase();
+		return t.toLowerCase();
 	}
 }
