@@ -13,12 +13,12 @@ public class Lesson9Main {
 	public static void main(String[] args) {
 
 		// Assignment 1
-		Stream<String> stringStream = Stream.of("Bill", "Thomas", "Mary");
+		Stream<String> stringStream = Stream.of("Bill", "Thomas", "Mary", "Kushal");
 		System.out.println(stringStream.collect(Collectors.toList()));
-		System.out.println(Arrays.asList("Bill", "Thomas", "Mary").stream().collect(Collectors.toList()));
+		System.out.println(Stream.of("Bill", "Thomas", "Mary").collect(Collectors.toList()));
 
 		// Assignment2
-		Stream<Integer> intStream = Arrays.asList(1, 2, 3).stream();
+		Stream<Integer> intStream = Stream.of(1, 2, 3);
 		IntSummaryStatistics summary = intStream.collect(Collectors.summarizingInt(Integer::intValue));
 		System.out.println(summary);
 		System.out.println("max = " + summary.getMax() + " min = " + summary.getMin());
@@ -73,8 +73,8 @@ public class Lesson9Main {
 		System.out.println(city);
 
 		// Query 3: Find all traders from Cambridge and sort them by name.
-		List<Trader> traders = transactions.stream().filter(x -> x.getTrader().getCity() == "Cambridge")
-				.map(x -> x.getTrader()).sorted(Comparator.comparing(Trader::getName)).distinct()
+		List<Trader> traders = transactions.stream().map(x -> x.getTrader())
+				.filter(trader -> trader.getCity().equals("Cambridge")).sorted(Comparator.comparing(Trader::getName)).distinct()
 				.collect(Collectors.toList());
 		System.out.println(traders);
 		List<Trader> cambridgeTraders = transactions.stream().map(Transaction::getTrader)
@@ -161,7 +161,7 @@ public class Lesson9Main {
 	public int countWords(List<String> words, char c, char d, int len) {
 		return words.stream().map(x -> x.toLowerCase())
 				.filter(x -> x.length() == len && x.contains("" + c) && !x.contains("" + d))
-				.collect(Collectors.toList()).size();
+				.toList().size();
 	}
 
 	public static void printSquares(int limit) {
@@ -202,12 +202,12 @@ public class Lesson9Main {
 	}
 
 	private static int calculateTotalCalories1() {
-		return Dish.menu.stream().collect(Collectors.reducing(0, Dish::getCalories, (Integer i, Integer j) -> i + j));
+		return Dish.menu.stream().map(Dish::getCalories).reduce(0, (Integer i, Integer j) -> i + j);
 	}
 
 //	f. calculateTotalCaloriesMethodReference()in the menu using MethodReferences. (return int)
 	private static int calculateTotalCaloriesWithMethodReference() {
-		return Dish.menu.stream().collect(Collectors.reducing(0, Dish::getCalories, Integer::sum));
+		return Dish.menu.stream().map(Dish::getCalories).reduce(0, Integer::sum);
 	}
 
 	private static int calculateTotalCaloriesWithoutCollectors() {
