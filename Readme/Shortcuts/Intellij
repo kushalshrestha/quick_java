@@ -1,0 +1,15 @@
+FOR MAC
+Resources : https://www.jetbrains.com/help/idea/using-code-editor.html
+----------------------------------------------------------------
+Command + Option(Alt) + L ===> Auto Indentation
+Shift + Command + F12 OR Shift + Esc ===> Maximize editor pane
+Alt(Option) + Enter ===> Auto Import
+Alt(Option) + Shift + Up/Down ===> Move Line
+Command + D ===> Duplicate line
+
+
+LIVE TEMPLATES:
+----------------------------------------------------------------
+psfs ===>   Public static final String
+psvm or main ===> public static void main
+sout ===> System.out.println();

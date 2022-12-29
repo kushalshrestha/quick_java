@@ -1,5 +1,6 @@
 package quick_java_fpp.fundamental;
 
+
 import java.util.Scanner;
 
 public class ScannerTest {
