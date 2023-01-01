@@ -48,6 +48,29 @@ public class Main {
         Subclass sub = new Subclass();
         sub.supermethod();
 
+        System.out.println("================================================================");
+        System.out.println("Inheritance");
+        System.out.println("================================================================");
+
+        Manager managerObj = new Manager("Jose Mourinho", 80000, 1989, 10, 1);
+        managerObj.setBonus(20000);
+
+        Employee[] employees = new Employee[3];
+        employees[0] = managerObj;
+        employees[1] = new Employee("Pablo Dyabala", 12000, 2000, 6, 26);
+        employees[2] = new Employee("Chris Smalling", 5000, 1996, 8, 21);
+
+        for (Employee e : employees) {
+            System.out.println("name : " + e.getName() + "\n salary : " + e.getSalary());
+        }
+
+        Manager m = new Manager("Mikel Arteta", 60000, 1994, 10, 12);
+        System.out.println("Manager's name : " + m.getName());
+        System.out.println("Manager's salary without bonus: " + m.getSalary());
+        m.setBonus(10000);
+        System.out.println("Manager's salary with bonus : " + m.getSalary());
+        System.out.println("When toString() is used without overriden, the output is : " + m.toString());
+
     }
 
     public void callByValueForRaise(int x) {
