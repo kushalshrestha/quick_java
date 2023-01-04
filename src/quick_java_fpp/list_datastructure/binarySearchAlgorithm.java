@@ -1,9 +1,6 @@
 package quick_java_fpp.list_datastructure;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class binarySearchAlgorithm {
     public static int binarySearchUsingIteration(int[] sortedArray, int key, int low, int high) {
@@ -45,5 +42,17 @@ public class binarySearchAlgorithm {
         for(String s : myList) {
             System.out.println(s);
         }
+
+        System.out.println("Implementing an Iterator - using for each function - lambda expression");
+        myList.forEach(System.out::println);
+
+        int pos = Collections.binarySearch(myList, "Messi");
+        System.out.println("Messi's current position (Before sorting) : " + pos);
+
+        Collections.sort(myList);
+        System.out.println("After Collections.sort : " + myList);
+
+        int afterPosition = Collections.binarySearch(myList, "Messi");
+        System.out.println("Messi's current position (After sorting) : " + afterPosition);
     }
 }
