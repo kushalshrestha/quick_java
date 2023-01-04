@@ -34,5 +34,27 @@ public class Main {
         Arrays.sort(personsList, (p1, p2) -> p1.getName().compareTo(p1.getName()));
 
         System.out.println(Arrays.toString(personsList));
+
+
+
+        System.out.println("================================================================");
+        Person[] personsList1 = {
+                new Person("Kane", 31),
+                new Person("Andriy", 27),
+                new Person("Kaka", 22),
+                new Person("Pirlo", 31),
+                new Person("Gattuso", 30)
+        };
+        System.out.println("SORTING BY NAME");
+        Arrays.sort(personsList1, new NameComparator());
+        System.out.println(Arrays.toString(personsList1));
+        System.out.println("SORTING BY AGE");
+        Arrays.sort(personsList1, new AgeComparator());
+        System.out.println(Arrays.toString(personsList1));
+
+
+
+
+
     }
 }
