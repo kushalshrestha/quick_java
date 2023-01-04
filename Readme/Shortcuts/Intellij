@@ -6,6 +6,7 @@ Shift + Command + F12 OR Shift + Esc ===> Maximize editor pane
 Alt(Option) + Enter ===> Auto Import
 Alt(Option) + Shift + Up/Down ===> Move Line
 Command + D ===> Duplicate line
+Command + [/] ===> Navigate code back/forward
 
 
 LIVE TEMPLATES:
