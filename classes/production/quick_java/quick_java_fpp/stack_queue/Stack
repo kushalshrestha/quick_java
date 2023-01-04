@@ -1,0 +1,8 @@
+Stack Operations:
+================================================================
+method      | description
+================================================================
+pop         | remove top of the stack and return this object
+push        | insert object as new top of the stack
+peek        | view object at top of the stack without removing it
+================================================================
