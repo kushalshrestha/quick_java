@@ -2,9 +2,11 @@ SOLID DESIGN PRINCIPLES
 ================================================================
 * Introduced by Robert C. Martin
 
-1st Principle: SRP - Single Responsibility Principle
+1st Principle : SRP - Single Responsibility Principle
 ----------------------------------------------------------------
 * Single class should have single responsibility
 * One responsibility of a single class
 
-
+2nd Principle : OCP - Open Closed Principle
+----------------------------------------------------------------
+* Objects or entities should be open for extension but closed for modification.
