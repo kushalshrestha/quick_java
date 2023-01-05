@@ -1,0 +1,10 @@
+SOLID DESIGN PRINCIPLES
+================================================================
+* Introduced by Robert C. Martin
+
+1st Principle: SRP - Single Responsibility Principle
+----------------------------------------------------------------
+* Single class should have single responsibility
+* One responsibility of a single class
+
+
