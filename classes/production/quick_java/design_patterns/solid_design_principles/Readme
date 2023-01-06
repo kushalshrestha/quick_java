@@ -10,3 +10,7 @@ SOLID DESIGN PRINCIPLES
 2nd Principle : OCP - Open Closed Principle
 ----------------------------------------------------------------
 * Objects or entities should be open for extension but closed for modification.
+
+3rd Principle : LSP - Liskov Substitution Principle
+----------------------------------------------------------------
+* You should be able to substitute a subclass for a base class.
