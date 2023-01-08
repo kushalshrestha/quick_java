@@ -27,6 +27,8 @@ interface Machine {
 
 // let's create a old printer
 class OldFashionedPrinter implements Machine {
+
+
     @Override
     public void printDocument(File f) {
 
@@ -55,13 +57,22 @@ interface Scanner {
 // so new printers can be like:
 class NewPrinters implements Printer, Scanner {
 
+    // private fields - have several modules
+    private Printer printer;
+    private Scanner scanner;
+
+    public NewPrinters(Printer printer, Scanner scanner) {
+        this.printer = printer;
+        this.scanner = scanner;
+    }
+
     @Override
     public void printDocument(File f) {
-
+        printer.printDocument(f);
     }
 
     @Override
     public void scanDocument(File f) {
-
+        scanner.scanDocument(f);
     }
 }
