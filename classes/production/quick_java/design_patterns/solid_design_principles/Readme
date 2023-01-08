@@ -14,3 +14,11 @@ SOLID DESIGN PRINCIPLES
 3rd Principle : LSP - Liskov Substitution Principle
 ----------------------------------------------------------------
 * You should be able to substitute a subclass for a base class.
+
+4th Principle : Interface Segregation Principle (ISP)
+----------------------------------------------------------------
+* recommendation on how to split interface into smaller interfaces
+* YAGNI -> You ain't going to need it i.e if you don't need it don't include it in the interface
+Eg: Printer interface can have print(), scan() methods. But OldPrinter class when implements Printer interface they have to implement scan() method although old printers does not use to have.
+
+

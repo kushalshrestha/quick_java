@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package design_patterns.solid_design_principles.resources;
+package design_patterns.solid_design_principles;
 
 public class LSPExample {
     // maybe conform to ++
