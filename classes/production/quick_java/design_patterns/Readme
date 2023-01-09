@@ -26,7 +26,12 @@ Note: for fluent interface, see BuilderDemo.java for chaining of methods
 for Recursive Generics, see BuilderDemoWithRecursiveGenerics
 
 Q. When your single builder is not sufficient (require several builders), what's the better approach?
-- Use Faceted Builder (see FacetedBuilderDemo.java)
+- Use Faceted Builder (see FacetedBuilderDemo.java). See how job and address objects are created for "Person" object.
+
+Note: A builder is a separate component for building an object
+* can either give builder a constructor or return it via a static function
+* to make builder fluent, return this
+* Different facets of an object can be built with different builders working in tandem via a base class
 
 
 
