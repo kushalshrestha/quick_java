@@ -22,7 +22,11 @@ In other words, when piecewise object construction is complicated, provide an AP
 
 Q. If you want 'fluent interface' to propagate through sub classes, what needs to be done?
 - You need to perform 'RECURSIVE GENERICS'
+Note: for fluent interface, see BuilderDemo.java for chaining of methods
+for Recursive Generics, see BuilderDemoWithRecursiveGenerics
 
+Q. When your single builder is not sufficient (require several builders), what's the better approach?
+- Use Faceted Builder (see FacetedBuilderDemo.java)
 
 
 

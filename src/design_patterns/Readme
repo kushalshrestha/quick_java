@@ -25,6 +25,8 @@ Q. If you want 'fluent interface' to propagate through sub classes, what needs t
 Note: for fluent interface, see BuilderDemo.java for chaining of methods
 for Recursive Generics, see BuilderDemoWithRecursiveGenerics
 
+Q. When your single builder is not sufficient (require several builders), what's the better approach?
+- Use Faceted Builder (see FacetedBuilderDemo.java). See how job and address objects are created for "Person" object.
 
 
 
