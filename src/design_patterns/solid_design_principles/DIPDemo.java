@@ -58,6 +58,10 @@ class Relationships implements RelationshipBrowser {
     private List<Triplet<Person, Relationship, Person>> relations =
             new ArrayList<>();
 
+    public List<Triplet<Person, Relationship, Person>> getRelations() {
+        return relations;
+    }
+
     @Override
     public List<Person> findAllChildrenOf(String name) {
 
@@ -70,9 +74,6 @@ class Relationships implements RelationshipBrowser {
 
     // Triplet class requires javatuples
 
-    public List<Triplet<Person, Relationship, Person>> getRelations() {
-        return relations;
-    }
 
     public void addParentAndChild(Person parent, Person child) {
         relations.add(new Triplet<>(parent, Relationship.PARENT, child));
@@ -85,14 +86,15 @@ class Relationships implements RelationshipBrowser {
 class Research {
 
     // Issue: Here Research depends upon low level module 'Relationships'
-    public Research(Relationships relationships) {
-        // high-level: find all of john's children
-        List<Triplet<Person, Relationship, Person>> relations = relationships.getRelations();
-        relations.stream()
-                .filter(x -> x.getValue0().name.equals("John")
-                        && x.getValue1() == Relationship.PARENT)
-                .forEach(ch -> System.out.println("John has a child called " + ch.getValue2().name));
-    }
+    // Uncomment the following to see DIP against codes
+//    public Research(Relationships relationships) {
+//        // high-level: find all of john's children
+//        List<Triplet<Person, Relationship, Person>> relations = relationships.getRelations();
+//        relations.stream()
+//                .filter(x -> x.getValue0().name.equals("John")
+//                        && x.getValue1() == Relationship.PARENT)
+//                .forEach(ch -> System.out.println("John has a child called " + ch.getValue2().name));
+//    }
 
     // Solution: Research does not depend upon low level module 'Relationships'. But depends upon RelationshipBrowser i.e depends upon abstractions
     public Research(RelationshipBrowser browser) {

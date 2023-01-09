@@ -1,6 +1,12 @@
 SOLID DESIGN PRINCIPLES
 ================================================================
 * Introduced by Robert C. Martin
+List of Principles:
+SRP - Single Responsibility Principle
+OCP - Open Closed Principle
+LSP - Liskov Substitution Principle
+ISP - Interface Segregation Principle
+DIP - Dependency Inversion Principle
 
 1st Principle : SRP - Single Responsibility Principle
 ----------------------------------------------------------------
@@ -20,6 +26,7 @@ SOLID DESIGN PRINCIPLES
 * recommendation on how to split interface into smaller interfaces
 * YAGNI -> You ain't going to need it i.e if you don't need it don't include it in the interface
 Eg: Printer interface can have print(), scan() methods. But OldPrinter class when implements Printer interface they have to implement scan() method although old printers does not use to have.
+If you want going to need it, why force other users to implement it unnecessarily
 
 5th Principle : DIP - Dependency Inversion Principle
 ----------------------------------------------------------------

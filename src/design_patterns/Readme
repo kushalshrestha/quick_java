@@ -1,0 +1,28 @@
+DESIGN PATTERNS
+================================================================
+
+# Gamma Categorization:
+* Design Patterns are typically split into 3 categories:
+    - Creational Patterns
+        * Deal with the creation (construction) of objects
+        * Explicit (constructor) vs implicit (DI, reflection, etc.)
+        * Wholesale (single statement) vs piecewise (step by step)
+    - Structural Patterns
+        * Concerned with the structure (e.g. class members)
+        * Many patterns are wrappers that mimic the underlying class' intervace
+        * Stress the importance of good API design
+    - Behavioral Patterns
+        * They are all different; no central theme
+
+
+1. Builder Design Pattern
+*  Having an object with 10 constructor arguments is not productive. Instead, builder provides an API for constructing
+an object step-by-step.
+In other words, when piecewise object construction is complicated, provide an API for doing it succinctly.
+
+Q. If you want 'fluent interface' to propagate through sub classes, what needs to be done?
+- You need to perform 'RECURSIVE GENERICS'
+
+
+
+
