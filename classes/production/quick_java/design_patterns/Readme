@@ -47,7 +47,8 @@ Note: A builder is a separate component for building an object
 - Wholesale object creation (non-piecewise, unlike Builder) can be outsourced to
     . a separate function (Factory Method)
     . a separate class (Factory Class)
-
+Note: See PointDemo for beginner level.
+Intermediate level : see AbstractFactoryDemo - contains hierarchy level factory pattern, but has compilation error.
 
 
 
