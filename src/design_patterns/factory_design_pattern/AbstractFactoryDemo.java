@@ -7,14 +7,14 @@
 
 package design_patterns.factory_design_pattern;
 
-import org.javatuples.Pair;
-import org.reflections.Reflections;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 interface IHotDrink {
     void consume();

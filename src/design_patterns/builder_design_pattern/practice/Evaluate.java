@@ -7,11 +7,6 @@
 
 package design_patterns.builder_design_pattern.practice;
 
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class Evaluate
 {
     private String preprocess(String text)
