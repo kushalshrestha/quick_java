@@ -50,5 +50,31 @@ Note: A builder is a separate component for building an object
 Note: See PointDemo for beginner level.
 Intermediate level : see AbstractFactoryDemo - contains hierarchy level factory pattern, but has compilation error.
 
+Summary:
+Factory method is a static method that creates objects
+Factory can take care of object creation - can be created as separate class
+Factory can be external or reside inside the object as an inner class
+Hierarchies of factories can be used to create related objects. (see AbstractFactoryDemo.java, but code has some issues need to fix)
 
+3. Prototype design pattern
+----------------------------------------------------------------
+* A partially or fully initialized object that you copy (clone) and make use of.
+When to use: When it's easier to copy an existing object to fully initialize a new one.
+Eg; Iphone 14 are not made from scratch, they just copy and existing Iphone versions and make changes.
+* Complicated objects (e.g cars) aren't designed from scratch
+ - they reiterate existing designs
+* An existing (partially or fully constructed) design is a Prototype
+* We make a copy (clone) the prototype and customize it
+ - requires 'deep copy' i.e copy not only objects but the references as well so that changint it won't effect existing objects
+* We make the cloning convenient (e.g via Factory)
+Demo: See CopyConstructorDemo.java
+        - but if you have a long hierarchy, we need to use serialization so that we don't have to jump to all copy constructor methods
+        So, the approach is using Serialization (see CopyThroughSerializationDemo.java)
+Q. Learn deep copy and shallow copy
 
+Summary:
+To implement a prototype, partially construct an object and store it somewhere
+and then clone the prototype using different approach like:
+    * implement your own deep copy functionality or
+    * serialize and deserialize
+Then once made the copy of an object all you need to do is customize the new instance/ resulting instance.
