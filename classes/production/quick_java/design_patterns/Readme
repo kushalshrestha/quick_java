@@ -78,3 +78,10 @@ and then clone the prototype using different approach like:
     * implement your own deep copy functionality or
     * serialize and deserialize
 Then once made the copy of an object all you need to do is customize the new instance/ resulting instance.
+
+3. Singleton Design Pattern
+----------------------------------------------------------------
+* Component which is instantiated only once
+* For some components it only makes sense to have one in the system
+ - Eg: Database repository, Object Factory
+* When constructor call is expensive, we only do it once, we provide everyone the same instance
