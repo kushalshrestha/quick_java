@@ -81,4 +81,15 @@ brew -v
 1. Go to download link:
    Gradle Download -
    https://gradle.org/install/
+2. By using brew:
+```
+brew install gradle
+```
+
+3. Check version:
+```
+gradle -v
+```
+
+
 
