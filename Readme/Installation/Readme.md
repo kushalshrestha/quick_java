@@ -1,7 +1,35 @@
 # INSTALLATION
 
 
+## Installing Homebrew
+1. Go to /usr then:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+==> Enter password
+```
+
+2. Next steps:
+Run these three commands in your terminal to add Homebrew to your PATH:
+```
+  echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/kushal/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kushal/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+Check brew version:
+```
+brew -v
+```
+
 ## Installing Maven
+Prerequisite: 
+Verify Java is installed: 
+```
+java -version
+```
+Verify JDK is installed: 
+```
+javac -version
+```
 1. check if JAVA_HOME is defined in your MAC OS + M1 chip
 ```
 echo $JAVA_HOME
@@ -34,3 +62,23 @@ mvn
 ```agsl
 mvn -v
 ```
+
+
+## Installing Gradle
+Prerequisite:
+Verify Java is installed:
+```
+java -version
+```
+Verify JDK is installed:
+```
+javac -version
+```
+Brew is installed:
+```
+brew -v
+```
+1. Go to download link:
+   Gradle Download -
+   https://gradle.org/install/
+
