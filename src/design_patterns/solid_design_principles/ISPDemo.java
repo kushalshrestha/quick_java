@@ -36,7 +36,7 @@ class OldFashionedPrinter implements Machine {
 
     @Override
     public void scanDocument(File f) {
-        //scan is not supported in old printers so the better approach would be to follow Interface Segregation Principle
+        //scan is not supported in old printers so the better approach would be to follow InterfaceExample Segregation Principle
         // i.e create 3 different interfaces printer, scanner, faxMachine
     }
 

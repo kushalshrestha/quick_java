@@ -21,10 +21,12 @@ to the object, rather than a copy of the object itself.
  */
 public class PassByValuePassByReference {
     public static void main(String[] args) {
+        System.out.println("For Primitive types, parameters are pass-by-value\n" +
+                "For Object types, the object reference is pass-by-value");
+        System.out.println("==========");
         primitiveModifiedThenOriginalValuesNotModified();
         System.out.println("=========");
         nonPrimitiveModifiedThenOriginalValuesModified();
-
     }
 
     private static void primitiveModifiedThenOriginalValuesNotModified() {

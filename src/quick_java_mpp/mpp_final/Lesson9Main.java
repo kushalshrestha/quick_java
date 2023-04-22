@@ -142,7 +142,7 @@ public class Lesson9Main {
 		// or
 		humanStream1.filter(human -> human.getGender().equals("Female")).forEach(System.out::println);
 
-		// Query 2 : Cretae an object by choosing suitable Interface to the specified
+		// Query 2 : Cretae an object by choosing suitable InterfaceExample to the specified
 		Function<String, Human> function = Human::new;
 		// OR
 		Function<String, Human> function1 = (s) -> new Human(s);
