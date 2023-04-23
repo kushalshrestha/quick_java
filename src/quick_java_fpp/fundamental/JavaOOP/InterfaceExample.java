@@ -48,7 +48,7 @@ interface SuperTraveller extends Floatable, Flyable {
 }
 
 /*
- * Tags: InterfaceExample, Interface,
+ * Tags: InterfaceExample, Interface, MultipleInheritance
  * */
 public class InterfaceExample extends Car implements Floatable, Flyable {
     public static void main(String[] args) {
