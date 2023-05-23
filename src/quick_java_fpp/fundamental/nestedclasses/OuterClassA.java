@@ -1,14 +1,21 @@
-package quick_java_fpp.nested_classes;
+/*
+ * Copyright (c) 2023. 
+ * Author : Kushal Shrestha
+ * Linkedin : https://www.linkedin.com/in/kushal-shrestha/
+ * Email : kushalshr@gmail.com
+ */
+
+package quick_java_fpp.fundamental.nestedclasses;
 
 /**
  * Member Inner Class Examples
  */
-public class OuterClass {
+public class OuterClassA {
 
     private int x = 10;
     private String outerThis = "Outer this!!!";
 
-    OuterClass() {
+    OuterClassA() {
         InnerClass innerClass = new InnerClass();
         System.out.println(innerClass.innerVariable);
         innerClass.innerClassMethod();
@@ -23,11 +30,11 @@ public class OuterClass {
         public void innerClassMethod() {
             System.out.println("This is inner class method");
             System.out.println("Value of x is : " + x);
-            System.out.println(OuterClass.this.outerThis);
+            System.out.println(OuterClassA.this.outerThis);
         }
     }
 
     public static void main(String[] args) {
-        new OuterClass();
+        new OuterClassA();
     }
 }

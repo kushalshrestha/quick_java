@@ -1,7 +1,12 @@
 
-package quick_java_fpp.nested_classes;
+/*
+ * Copyright (c) 2023.
+ * Author : Kushal Shrestha
+ * Linkedin : https://www.linkedin.com/in/kushal-shrestha/
+ * Email : kushalshr@gmail.com
+ */
 
-import quick_java_mpp.lesson8.prob3.MyClass;
+package quick_java_fpp.fundamental.nestedclasses;
 
 public class StaticNestedClass {
     public int i = 4;
