@@ -11,7 +11,7 @@ package quick_java_fpp.fundamental.nestedclasses;
  * SCENARIO : OuterClass and Innerclass declared as default(accessed from same package), so that outside objects can
  * access the inner class
  */
-class OuterClass {
+class OuterClass1 {
     int x = 10;
     class InnerClass {
         int y = 5;
@@ -20,8 +20,8 @@ class OuterClass {
 
 public class InnerClassExample {
     public static void main(String[] args) {
-        OuterClass myOuter = new OuterClass();
-        OuterClass.InnerClass myInner = myOuter.new InnerClass();
+        OuterClass1 myOuter = new OuterClass1();
+        OuterClass1.InnerClass myInner = myOuter.new InnerClass();
         System.out.println(myInner.y + myOuter.x);
     }
 }
