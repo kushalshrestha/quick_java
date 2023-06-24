@@ -5,7 +5,8 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println(Constants.COMPANY);
 		System.out.println(Constants.SALES_TARGET);
-		
+
+		System.out.println(enumAsConstant.COMPANY); // will print COMPANY
 		System.out.println(enumAsConstant.COMPANY.getStringValue());
 		System.out.println(enumAsConstant.COMPANY.getIntValue());
 		System.out.println(enumAsConstant.SALES_TARGET.getIntValue());
