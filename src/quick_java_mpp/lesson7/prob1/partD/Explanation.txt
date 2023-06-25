@@ -1,4 +1,5 @@
 Problem 1
 Part D
 ==========
-The code fails because of the use of method setVisited(). It changes the value of visited which impacts the 'equals(Object ob)' and 'hashCode()' methods hence, returns false.
+The code fails because of the use of method setVisited().
+It changes the value of visited which impacts the 'equals(Object ob)' and 'hashCode()' methods hence, returns false.

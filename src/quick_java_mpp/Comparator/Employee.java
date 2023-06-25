@@ -1,6 +1,11 @@
-package quick_java_mpp.lesson7.prob1.partC;
+/*
+ * Copyright (c) 2023.
+ * Author : Kushal Shrestha
+ * Linkedin : https://www.linkedin.com/in/kushal-shrestha/
+ * Email : kushalshr@gmail.com
+ */
 
-import java.util.Objects;
+package quick_java_mpp.Comparator;
 
 public class Employee {
     private String name;
@@ -31,22 +36,7 @@ public class Employee {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, salary);
-    }
-
-    @Override
     public String toString() {
-        return "(" + name + ", " + salary + ")";
+        return "Employee{" + "name='" + name + '\'' + ", salary=" + salary + '}';
     }
-
-    @Override
-    public boolean equals(Object ob) {
-        if (ob == null)
-            return false;
-        if (!(ob instanceof Employee emp))
-            return false;
-        return emp.name.equals(name) && emp.salary == salary;
-    }
-
 }

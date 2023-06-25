@@ -19,4 +19,9 @@ public enum enumAsConstant {
 	public int getIntValue() {
 		return intVal;
 	}
+
+//	@Override
+//	public String toString() {
+//		return "enumAsConstant{" + "stringVal='" + stringVal + '\'' + ", intVal=" + intVal + '}';
+//	}
 }

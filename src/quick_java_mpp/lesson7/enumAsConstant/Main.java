@@ -6,7 +6,8 @@ public class Main {
 		System.out.println(Constants.COMPANY);
 		System.out.println(Constants.SALES_TARGET);
 
-		System.out.println(enumAsConstant.COMPANY); // will print COMPANY
+		System.out.println(enumAsConstant.COMPANY); // will print COMPANY because enum constant directly(implicityl
+		// calls 'toString()'
 		System.out.println(enumAsConstant.COMPANY.getStringValue());
 		System.out.println(enumAsConstant.COMPANY.getIntValue());
 		System.out.println(enumAsConstant.SALES_TARGET.getIntValue());

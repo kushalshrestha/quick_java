@@ -1,7 +1,8 @@
 Problem 1
 Part B
 ==========
-The code fails because the equals method should overwrite a super type method. And in the code the super type refers to "Object" class which is the root of the class hierarchy, not Employee type. Hence the signature should be:
+The code fails because the equals method should overwrite a super type method. And in the code the super type refers to
+ "Object" class which is the root of the class hierarchy, not Employee type. Hence the signature should be:
 
 public boolean equals(Object obj) 
 
