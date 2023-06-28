@@ -8,10 +8,8 @@
 package design_patterns.singleton_design_pattern;
 
 public class LazySingleton {
-    private int value = 0;
-
-
     private static LazySingleton instance;
+    private int value = 0;
 
     public LazySingleton() {
         System.out.println("initializing LazySingleton");

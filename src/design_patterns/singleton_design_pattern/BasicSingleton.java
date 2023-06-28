@@ -3,8 +3,8 @@ package design_patterns.singleton_design_pattern;
 import java.util.stream.BaseStream;
 
 public class BasicSingleton {
+    private static final BasicSingleton INSTANCE = new BasicSingleton();
     private int value = 0;
-
 
     //we create private constructor so that nobody can instantiate from outside.
     private BasicSingleton() {
@@ -15,8 +15,6 @@ public class BasicSingleton {
     public static BasicSingleton getInstance() {
         return INSTANCE;
     }
-
-    private static final BasicSingleton INSTANCE = new BasicSingleton();
 
     public int getValue() {
         return value;
