@@ -9,7 +9,9 @@ package InterviewPractice;
 
 /* Closure are the lambda expression, that can capture and use variables from the surrounding scope, as long as those
 variables are effectively final or explicitly declared final.
-effectively final -> value not changed. If changed gives compilation error
+effectively final -> value not changed. If changed gives compilation error. B/C Lambda expression captures the
+variable by reference, and any modifications to that variable can affect the lambda's behavior. i.e inconsistent
+behavior
  */
 public class ClosureExample {
     public static void main(String[] args) {
