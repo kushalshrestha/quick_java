@@ -21,7 +21,7 @@ Input: nums = [1, 2, 3, 4]
 Output: false
 */
 
-public class ContainsDuplicate {
+public class I_ContainsDuplicate {
 	
 	/* 1. By Brute Force */
 	public boolean hasDuplicate(int[] nums) {
@@ -46,6 +46,7 @@ public class ContainsDuplicate {
 		return false;
 	}
 	
+	/*3. By Hash Set*/
 	public boolean hasDuplicateByHashSet(int[] nums) {
 		Set<Integer> seen = new HashSet<Integer>();
 		for (int num: nums) {
@@ -58,13 +59,19 @@ public class ContainsDuplicate {
 		return false;
 	}
 	
+	/* 4. By Hash Set Length */
+	public boolean hasDuplicateByHashSetLength(int[] nums) {
+		return Arrays.stream(nums).distinct().count() < nums.length;
+	}
+	
 	// Test method
     public static void main(String[] args) {
-    	ContainsDuplicate solution = new ContainsDuplicate();
+    	I_ContainsDuplicate solution = new I_ContainsDuplicate();
     	int[] nums = {1, 2, 3, 3};
     	System.out.println(solution.hasDuplicate(nums)); //true
     	System.out.println(solution.hasDuplicateBySorting(nums));
     	System.out.println(solution.hasDuplicateByHashSet(nums));
+    	System.out.println(solution.hasDuplicateByHashSetLength(nums));
         
     }
 }
