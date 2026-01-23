@@ -20,11 +20,8 @@ package problem_solving;
 public class SleepIn {
     public boolean sleepIn(boolean weekday, boolean vacation) {
         boolean IsSleepIn = false;
-        if (!weekday || vacation){
+        if (!weekday || vacation)
             IsSleepIn = true;
-        } else {
-            IsSleepIn = false;
-        }
         return IsSleepIn;
     }
 
