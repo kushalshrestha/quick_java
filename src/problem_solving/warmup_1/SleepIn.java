@@ -15,7 +15,7 @@ sleepIn(false, false) → true
 sleepIn(true, false) → false
 sleepIn(false, true) → true
 */
-package problem_solving;
+package problem_solving.warmup_1;
 
 public class SleepIn {
     public boolean sleepIn(boolean weekday, boolean vacation) {

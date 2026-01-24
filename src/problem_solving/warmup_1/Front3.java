@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 
 /*
 * Given a string, we'll say that the front is the first 3 chars of the string.

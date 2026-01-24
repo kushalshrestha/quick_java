@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 
 /*
 * Given a string, return a string made of the first 2 chars (if present),

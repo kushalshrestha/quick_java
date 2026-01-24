@@ -16,7 +16,7 @@ monkeyTrouble(true, false) → false
 
 * */
 
-package problem_solving;
+package problem_solving.warmup_1;
 
 
 public class MonkeyTrouble {

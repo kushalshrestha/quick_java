@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 /*
 *
 Given 2 int values, return true if one is negative and one is positive.

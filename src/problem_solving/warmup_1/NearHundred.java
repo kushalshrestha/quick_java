@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 /*
 * Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) computes the absolute value of a number.
 

@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 /*
 * Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
 

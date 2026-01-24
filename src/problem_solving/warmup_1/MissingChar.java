@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 
 /*
 * Given a non-empty string and an int n, return a new string where the char at index n has been removed.

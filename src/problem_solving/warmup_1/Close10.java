@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 
 /**
  * Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie.

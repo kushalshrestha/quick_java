@@ -12,7 +12,7 @@ sumDouble(1, 2) → 3
 sumDouble(3, 2) → 5
 sumDouble(2, 2) → 8
 * */
-package problem_solving;
+package problem_solving.warmup_1;
 
 public class SumDouble {
     public int sumDouble(int a, int b){

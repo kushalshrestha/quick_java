@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 
 /*
 * We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23.

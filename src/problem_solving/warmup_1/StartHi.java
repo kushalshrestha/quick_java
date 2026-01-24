@@ -5,7 +5,7 @@
  * Email : kushalshr@gmail.com
  */
 
-package problem_solving;
+package problem_solving.warmup_1;
 /*
 *
 Given a string, return true if the string starts with "hi" and false otherwise.
