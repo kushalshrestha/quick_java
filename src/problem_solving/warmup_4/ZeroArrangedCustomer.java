@@ -11,6 +11,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * could you write a program or logic where you're given Customer List,
+ * Customer has score and score can contain numbers and 0s as well. Output should have all customer with 0's coming in
+ * the last.
+ * Input: [3,5,-2, 0 , 0 ,2 ,-100]
+ * List<Customer> cList = Arrays.asList(
+ *                 new Customer("Messi", 0),
+ *                 new Customer("Anil", 11),
+ *                 new Customer("Kushal", 10),
+ *                 new Customer("Mbappe", 0),
+ *                 new Customer("Ram", 11)
+ *         );
+ *
+ * Output:
+ * Customer{name='Anil', score=11}
+ * Customer{name='Kushal', score=10}
+ * Customer{name='Ram', score=11}
+ * Customer{name='Messi', score=0}
+ * Customer{name='Mbappe', score=0}
+ */
 public class ZeroArrangedCustomer {
     public static void main(String[] args) {
         List<Customer> cList = Arrays.asList(
@@ -18,7 +38,7 @@ public class ZeroArrangedCustomer {
                 new Customer("Anil", 11),
                 new Customer("Kushal", 10),
                 new Customer("Mbappe", 0),
-                new Customer("Anil", 11)
+                new Customer("Ram", 11)
         );
 
         moveZeroRankingCustomersToEnd(cList);
@@ -26,10 +46,20 @@ public class ZeroArrangedCustomer {
         cList.forEach(System.out::println);
 
         cList.forEach(customer -> System.out.println(customer));
+
+        List<Customer> cList1 = Arrays.asList(
+                new Customer("Messi", 0),
+                new Customer("Anil", 11),
+                new Customer("Kushal", 10),
+                new Customer("Mbappe", 0),
+                new Customer("Ram", 11)
+        );
+
+        List<Customer> updatedCList = moveZeroRankingStream(cList1);
+        updatedCList.forEach(c -> System.out.println(c));
     }
 
     private static void moveZeroRankingCustomersToEnd(List<Customer> customers) {
-
         List<Customer> zeroRankCustomers = new ArrayList<>();
         int write = 0;
 
@@ -46,6 +76,21 @@ public class ZeroArrangedCustomer {
         for (Customer customer : zeroRankCustomers) {
             customers.set(write++, customer);
         }
+    }
+
+    private static List<Customer> moveZeroRankingStream(List<Customer> customers) {
+        var nonZero = customers.stream()
+                .filter(c -> c.getScore() != 0)
+                .toList();
+
+        var zeros = customers.stream()
+                .filter(c -> c.getScore() == 0)
+                .toList();
+
+        List<Customer> result = new ArrayList<>();
+        result.addAll(nonZero);
+        result.addAll(zeros);
+        return result;
     }
 }
 
