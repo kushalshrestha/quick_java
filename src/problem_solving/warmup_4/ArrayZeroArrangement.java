@@ -18,10 +18,10 @@ public class ArrayZeroArrangement {
     public int[] zeroArrangement(int[] arr) {
         int index = 0;
         int endIndex = arr.length - 1;
-        while(index < endIndex){
+        while (index < endIndex) {
             System.out.println(arr[index] + " " + index + " " + endIndex);
             System.out.println(Arrays.toString(arr));
-            if (arr[index] == 0){
+            if (arr[index] == 0) {
                 arr[index] = arr[endIndex];
                 arr[endIndex] = 0;
                 endIndex--;
@@ -35,11 +35,34 @@ public class ArrayZeroArrangement {
         return arr;
     }
 
+    public int[] zeroArrangementOptimized(int[] arr) {
+        int index = 0;
+        for (int num : arr) {
+            if (num != 0) {
+                arr[index] = num;
+                index += 1;
+            }
+        }
+
+        while (index < arr.length) {
+            arr[index] = 0;
+            index += 1;
+        }
+        return arr;
+    }
+
 
     public static void main(String[] args) {
         ArrayZeroArrangement aza = new ArrayZeroArrangement();
         System.out.println(Arrays.toString(aza.zeroArrangement(new int[]{3, 5, -2, 0, 0, 2, -100})));
         System.out.println(Arrays.toString(aza.zeroArrangement(new int[]{0, 0, -2, 0, 0, 2, 0})));
         System.out.println(Arrays.toString(aza.zeroArrangement(new int[]{0, 1, 0, 0})));
+
+
+        System.out.println(Arrays.toString(aza.zeroArrangementOptimized(new int[]{0, 1, 0, 0})));
+        System.out.println(Arrays.toString(aza.zeroArrangementOptimized(new int[]{0, 0, -2, 0, 0, 2, 0})));
+        System.out.println(Arrays.toString(aza.zeroArrangementOptimized(new int[]{3, 5, -2, 0, 0, 2, -100})));
+
+
     }
 }
